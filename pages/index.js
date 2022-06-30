@@ -15,7 +15,7 @@ export default function Home({ articles }) {
         <p>Start editing to see some magic happen :)</p>
       </div>
       <div className="articles">
-        {articles.map((article) => (
+        {articles.splice(20, 70).map((article) => (
           <BlogCard key={article.id} article={article} />
         ))}
       </div>
