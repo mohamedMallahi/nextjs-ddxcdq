@@ -1,8 +1,15 @@
+import Head from 'next/head';
 import BlogCard from '../components/BlogCard';
 
 export default function Blogs({ articles }) {
   return (
     <>
+      <Head>
+        <meta
+          name="description"
+          content="Welcome To NetBlogger! Start editing to see some magic happen :)"
+        />
+      </Head>
       <div className="articles">
         {articles.map((article) => (
           <BlogCard key={article.id} article={article} />
