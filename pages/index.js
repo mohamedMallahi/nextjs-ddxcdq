@@ -9,6 +9,10 @@ export default function Home({ articles }) {
           name="description"
           content="Welcome To NetBlogger! Start editing to see some magic happen :)"
         />
+        <meta
+          name="google-site-verification"
+          content="WWRer6-6V5unAn3sfeiBZKwGroCeaADhXq09ePylNpk"
+        />
       </Head>
       <div className="banner">
         <h1>Welcome To NetBlogger!</h1>
