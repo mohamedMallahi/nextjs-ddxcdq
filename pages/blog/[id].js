@@ -10,7 +10,7 @@ export default function Blogs({ article }) {
         />
         <title>{article.title}</title>
       </Head>
-      <article className="article">
+      <article>
         <h1>{article.title}</h1>
         <p>{article.body}</p>
       </article>
