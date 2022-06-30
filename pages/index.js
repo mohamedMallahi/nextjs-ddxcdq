@@ -1,4 +1,3 @@
-import styles from '../styles/Home.module.css';
 import BlogCard from '../components/BlogCard';
 
 export default function Home({ articles }) {
