@@ -29,6 +29,7 @@ export async function getServerSideProps(context) {
     }
   );
   const data = await res.json();
+  console.log(data);
 
   return {
     props: {
@@ -40,7 +41,6 @@ export async function getServerSideProps(context) {
 export async function getStaticPath() {
   const res = await fetch('http://jsonplaceholder.typicode.com/posts');
   const data = await res.json();
-
   return {
     paths: [data.map((post) => ({ params: { id: post.id } }))],
     fallback: false,
