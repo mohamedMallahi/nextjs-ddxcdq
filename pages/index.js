@@ -28,7 +28,7 @@ export default function Home({ articles }) {
 }
 
 export const getServerSideProps = async () => {
-  const res = await fetch('http://jsonplaceholder.typicode.com/posts');
+  const res = await fetch('http://jsonplaceholder.typicode.com/posts?_limit=9');
   const data = await res.json();
 
   return {
