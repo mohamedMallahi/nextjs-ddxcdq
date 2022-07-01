@@ -3,7 +3,11 @@ import Link from 'next/link';
 const BlogCard = ({ article }) => {
   return (
     <div className="card">
-      <DummyImage />
+      {/* <DummyImage /> */}
+      <img
+        src="https://images.pexels.com/photos/10756534/pexels-photo-10756534.jpeg?auto=compress"
+        alt=""
+      />
       <div className="card-body">
         <h3 className="card-title">{article.title}</h3>
         <p className="card-text">
