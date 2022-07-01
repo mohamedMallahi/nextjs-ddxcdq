@@ -20,12 +20,15 @@ export default function Blogs({ articles }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch('http://jsonplaceholder.typicode.com/posts', {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-    },
-  });
+  const res = await fetch(
+    'http://jsonplaceholder.typicode.com/posts?_limit=9',
+    {
+      method: 'GET',
+      headers: {
+        accept: 'application/json',
+      },
+    }
+  );
   const data = await res.json();
 
   return {
