@@ -5,8 +5,8 @@ const BlogCard = ({ article }) => {
     <div className="card">
       {/* <DummyImage /> */}
       <img
-        src="https://images.pexels.com/photos/12173424/pexels-photo-12173424.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-        alt=""
+        src="https://images.pexels.com/photos/12303803/pexels-photo-12303803.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
+        alt={article.title}
       />
       <div className="card-body">
         <h3 className="card-title">{article.title}</h3>

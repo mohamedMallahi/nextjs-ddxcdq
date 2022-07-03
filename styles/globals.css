@@ -37,8 +37,30 @@ svg {
   background-color: #0984e3;
 }
 
+@media screen and (max-width: 720px) {
+  .navbar {
+    padding: 0.2rem 1rem;
+  }
+
+  .navbar li {
+    margin-left: 1rem !important;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .navbar {
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .navbar ul {
+    display: none !important;
+  }
+}
+
 .navbar span {
   font-weight: 700;
+  display: block;
 }
 
 .navbar ul {
@@ -68,11 +90,18 @@ svg {
   padding: 2rem;
 }
 
+@media screen and (max-width: 720px) {
+  .container {
+    padding: 1rem;
+  }
+}
+
 .banner {
   background-color: #0984e3;
   padding: 2rem;
   color: #fff;
   text-align: center;
+  border-radius: 5px;
 }
 
 .banner h1,
@@ -91,6 +120,7 @@ svg {
 @media screen and (max-width: 750px) {
   .articles {
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
   }
 }
 
