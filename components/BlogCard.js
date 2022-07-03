@@ -5,7 +5,7 @@ const BlogCard = ({ article }) => {
     <div className="card">
       {/* <DummyImage /> */}
       <img
-        src="https://images.pexels.com/photos/10756534/pexels-photo-10756534.jpeg?auto=compress"
+        src="https://images.pexels.com/photos/12173424/pexels-photo-12173424.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
         alt=""
       />
       <div className="card-body">
