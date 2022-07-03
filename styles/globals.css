@@ -209,6 +209,10 @@ label {
   border-radius: 5px;
 }
 
+.card img {
+  border-radius: 5px;
+}
+
 .card-body {
   flex: 1 1;
   padding: 0 1rem 1rem;

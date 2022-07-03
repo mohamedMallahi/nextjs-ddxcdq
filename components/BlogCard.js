@@ -2,44 +2,35 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const BlogCard = ({ article }) => {
+  const { title, slug, thumbnail } = article.fields;
+  const { createdAt } = article.sys;
+  console.log(article);
   return (
     <div className="card">
       {/* <DummyImage /> */}
       <Image
-        src="https://images.pexels.com/photos/12303803/pexels-photo-12303803.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
+        src={'https:' + thumbnail.fields.file.url}
         alt={article.title}
+        width="400"
+        height="300"
       />
       <div className="card-body">
-        <h3 className="card-title">{article.title}</h3>
+        <h3 style={{ marginBottom: '0' }} className="card-title">
+          {title}
+        </h3>
+        <span style={{ fontSize: '13px', color: '#333' }}>
+          {'Published in ' + new Date(createdAt).toDateString()}
+        </span>
         <p className="card-text">
           Quia et suscipit\nsuscipit recusandae consequuntur expedita et
           cum\nreprehenderit molestiae
         </p>
-        <Link href={`/blog/${article.id}`} className="btn">
+        <Link href={`/blog/${slug}`} className="btn">
           Read More
         </Link>
       </div>
     </div>
   );
 };
-
-const DummyImage = () => (
-  <svg
-    className="bd-placeholder-img card-img-top"
-    width="100%"
-    height="180"
-    xmlns="http://www.w3.org/2000/svg"
-    role="img"
-    aria-label="Placeholder: Image cap"
-    preserveAspectRatio="xMidYMid slice"
-    focusable="false"
-  >
-    <title>Placeholder</title>
-    <rect width="100%" height="100%" fill="#868e96"></rect>
-    <text x="50%" y="50%" fill="#dee2e6" dy=".3em">
-      Image cap
-    </text>
-  </svg>
-);
 
 export default BlogCard;
