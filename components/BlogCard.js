@@ -1,10 +1,11 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 const BlogCard = ({ article }) => {
   return (
     <div className="card">
       {/* <DummyImage /> */}
-      <img
+      <Image
         src="https://images.pexels.com/photos/12303803/pexels-photo-12303803.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
         alt={article.title}
       />

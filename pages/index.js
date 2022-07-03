@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { createClient } from 'contentful';
 import BlogCard from '../components/BlogCard';
 
 export default function Home({ articles }) {
@@ -27,15 +28,16 @@ export default function Home({ articles }) {
   );
 }
 
-export const getServerSideProps = async () => {
-  const res = await fetch(
-    'https://jsonplaceholder.typicode.com/posts?_limit=9'
-  );
-  const data = await res.json();
+export const getStaticProps = async () => {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  });
+  const res = await client.getEntries({ content_type: 'posts' });
 
   return {
     props: {
-      articles: data,
+      articles: res.items,
     },
   };
 };
