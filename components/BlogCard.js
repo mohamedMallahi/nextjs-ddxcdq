@@ -1,10 +1,11 @@
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 
 const BlogCard = ({ article }) => {
+  const router = useRouter();
   const { title, slug, thumbnail } = article.fields;
   const { createdAt } = article.sys;
-  console.log(article);
+
   return (
     <div className="card">
       {/* <DummyImage /> */}
@@ -25,9 +26,9 @@ const BlogCard = ({ article }) => {
           Quia et suscipit\nsuscipit recusandae consequuntur expedita et
           cum\nreprehenderit molestiae
         </p>
-        <Link href={`/blog/${slug}`} className="btn">
+        <button onClick={(e) => router.push(`/blog/${slug}`)} className="btn">
           Read More
-        </Link>
+        </button>
       </div>
     </div>
   );
