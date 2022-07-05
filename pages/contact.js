@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import React from 'react';
 import { useForm } from '../components/hooks';
 
@@ -13,33 +14,38 @@ const Contact = () => {
   };
 
   return (
-    <form className="form" onSubmit={submitHandler}>
-      <div>
-        <label htmlFor="subject">Subject</label>
-        <input
-          className="form-control"
-          value={values.subject}
-          onChange={changeHandler}
-          name="subject"
-          type="text"
-          name="subject"
-        />
-      </div>
-      <div>
-        <label htmlFor="message">Message</label>
-        <textarea
-          className="form-control"
-          value={values.message}
-          onChange={changeHandler}
-          name="message"
-          type="text"
-          name="message"
-        />
-      </div>
-      <button className="btn btn-block" type="submit">
-        Send
-      </button>
-    </form>
+    <>
+      <Head>
+        <title>NetBlogger | Contact Us</title>
+      </Head>
+      <form className="form" onSubmit={submitHandler}>
+        <div>
+          <label htmlFor="subject">Subject</label>
+          <input
+            className="form-control"
+            value={values.subject}
+            onChange={changeHandler}
+            name="subject"
+            type="text"
+            name="subject"
+          />
+        </div>
+        <div>
+          <label htmlFor="message">Message</label>
+          <textarea
+            className="form-control"
+            value={values.message}
+            onChange={changeHandler}
+            name="message"
+            type="text"
+            name="message"
+          />
+        </div>
+        <button className="btn btn-block" type="submit">
+          Send
+        </button>
+      </form>
+    </>
   );
 };
 

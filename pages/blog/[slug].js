@@ -10,7 +10,7 @@ export default function Blog({ article }) {
       <Head>
         <meta
           name="description"
-          content="Welcome To NetBlogger! Start editing to see some magic happen :)"
+          content="  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate architecto eius obcaecati sunt consequuntur similique at."
         />
         <title>{title}</title>
       </Head>
