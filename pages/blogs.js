@@ -12,28 +12,23 @@ export default function Blogs({ articles }) {
       </Head>
       <div className="articles">
         {articles.map((article) => (
-          <BlogCard key={article.id} article={article} />
+          <BlogCard key={article.sys.id} article={article} />
         ))}
       </div>
     </>
   );
 }
 
-export async function getServerSideProps() {
-  const res = await fetch(
-    'http://jsonplaceholder.typicode.com/posts?_limit=9',
-    {
-      method: 'GET',
-      headers: {
-        accept: 'application/json',
-      },
-    }
-  );
-  const data = await res.json();
+export const getStaticProps = async () => {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  });
+  const res = await client.getEntries({ content_type: 'posts' });
 
   return {
     props: {
-      articles: data,
+      articles: res.items,
     },
   };
-}
+};
