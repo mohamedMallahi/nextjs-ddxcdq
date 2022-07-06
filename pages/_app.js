@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import '../styles/globals.css';
+import '../styles/globals.scss';
 
 function Layout({ Component, pageProps }) {
   return (

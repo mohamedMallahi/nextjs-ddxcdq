@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { createClient } from 'contentful';
 import BlogCard from '../components/BlogCard';
 
 export default function Blogs({ articles }) {

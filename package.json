@@ -12,6 +12,7 @@
     "next": "^12.1.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "sass": "^1.53.0",
     "use-subscription": "^1.8.0"
   }
 }

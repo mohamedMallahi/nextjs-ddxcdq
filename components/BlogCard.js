@@ -9,11 +9,12 @@ const BlogCard = ({ article }) => {
   return (
     <div className="card">
       {/* <DummyImage /> */}
+
       <Image
         src={'https:' + thumbnail.fields.file.url}
         alt={article.title}
-        width="400"
-        height="300"
+        width="350"
+        height="200"
       />
       <div className="card-body">
         <h3 style={{ marginBottom: '0' }} className="card-title">
