@@ -114,3 +114,18 @@ article {
     text-transform: capitalize;
   }
 }
+
+// Not Found
+.notfound {
+  text-align: center;
+
+  h1 {
+    font-size: 7rem;
+    margin: 0;
+    color: $primary-color;
+  }
+
+  p {
+    margin: 0;
+  }
+}
