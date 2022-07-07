@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import Skeleton from '../../components/Skeleton';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -12,6 +13,11 @@ export default function Blog({ article }) {
   const { title, thumbnail, body } = article.fields;
   const { createdAt } = article.sys;
   const articleComponent = documentToReactComponents(body);
+
+  if (!article) {
+    return <Skeleton />;
+  }
+
   return (
     <>
       <Head>
@@ -61,6 +67,6 @@ export async function getStaticPaths() {
 
   return {
     paths: data.map((post) => ({ params: { slug: post.fields.slug } })),
-    fallback: false,
+    fallback: true,
   };
 }
