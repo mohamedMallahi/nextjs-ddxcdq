@@ -24,11 +24,10 @@ export default function Skeleton() {
           padding: 2px 0;
           max-width: 200px;
         }
-        .s-Image {
-          display: block;
-          height: 200px;
-          width: 500px;
+        .s-image {
           margin: 1rem auto;
+          width: 400px;
+          height: 200px;
         }
         .s-content {
           padding: 8px 0;
