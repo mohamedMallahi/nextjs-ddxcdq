@@ -1,7 +1,8 @@
 export default function Skeleton() {
   return (
     <div className="skeleton">
-      <div className="s-header"></div>
+      <div className="s-heading"></div>
+      <div className="s-date"></div>
       <div className="s-image"></div>
       <div className="s-content"></div>
 
@@ -11,16 +12,23 @@ export default function Skeleton() {
           margin: 20px auto;
         }
         .skeleton > div {
-          background: #dbcc1a;
+          background: #ccc;
           border-radius: 4px;
-          margin: 20px 0;
         }
-        .s-banner {
-          padding: 12% 0;
+        .s-heading {
+          height: 33px;
         }
-        .s-header {
-          padding: 15px 0;
-          max-width: 500px;
+        .s-date {
+          height: 18px;
+          margin-top: 3px;
+          padding: 2px 0;
+          max-width: 200px;
+        }
+        .s-Image {
+          display: block;
+          height: 200px;
+          width: 500px;
+          margin: 1rem auto;
         }
         .s-content {
           padding: 8px 0;

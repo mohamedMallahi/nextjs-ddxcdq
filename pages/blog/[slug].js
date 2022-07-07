@@ -28,11 +28,11 @@ export default function Blog({ article }) {
         <title>{title}</title>
       </Head>
       <article>
-        <h1 style={{ marginBottom: '0' }}>{title}</h1>
+        <h1>{title}</h1>
         <span style={{ fontSize: '13px', color: '#333' }}>
           {'Published in ' + new Date(createdAt).toDateString()}
         </span>
-        <div className={'image-container'}>
+        <div className="image-container">
           <Image
             className="image"
             src={'https:' + thumbnail.fields.file.url}
