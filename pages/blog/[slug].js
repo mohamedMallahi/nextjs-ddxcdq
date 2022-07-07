@@ -10,13 +10,13 @@ const client = createClient({
 });
 
 export default function Blog({ article }) {
-  const { title, thumbnail, body } = article.fields;
-  const { createdAt } = article.sys;
-  const articleComponent = documentToReactComponents(body);
-
   if (!article) {
     return <Skeleton />;
   }
+
+  const { title, thumbnail, body } = article.fields;
+  const { createdAt } = article.sys;
+  const articleComponent = documentToReactComponents(body);
 
   return (
     <>
