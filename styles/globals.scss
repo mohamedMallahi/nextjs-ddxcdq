@@ -1,3 +1,4 @@
+@import 'configs';
 @import 'utilities';
 
 html {
@@ -15,7 +16,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0.2rem 2rem;
-  background-color: #0984e3;
+  background-color: $primary-color;
 
   .navbar span {
     font-weight: 700;
@@ -35,12 +36,12 @@ body {
 
   a {
     text-decoration: none;
-    /* color: #000; */
     color: #fff;
-  }
+    transition: all 0.3s;
 
-  a:hover {
-    border-bottom: 2px solid #fff;
+    &:hover {
+      border-bottom: 1px solid #fff;
+    }
   }
 }
 
@@ -68,7 +69,7 @@ body {
 /* Banner */
 
 .banner {
-  background-color: #0984e3;
+  background-color: $primary-color;
   padding: 2rem;
   color: #fff;
   text-align: center;
@@ -82,15 +83,12 @@ body {
 
 /* Articles */
 .articles {
-  padding: 2rem 0;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(3, 1fr);
+  padding: 1rem 0;
 }
 
 @media screen and (max-width: 750px) {
   .articles {
-    grid-template-columns: repeat(2, 1fr);
+    // grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
   }
 }
@@ -103,6 +101,8 @@ body {
 
 // Article
 article {
+  padding: 0 4rem;
+
   p {
     text-align: justify;
     margin-bottom: 10px;

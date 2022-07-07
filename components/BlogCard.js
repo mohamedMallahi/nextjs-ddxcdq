@@ -5,15 +5,14 @@ const BlogCard = ({ article }) => {
   const router = useRouter();
   const { title, slug, thumbnail } = article.fields;
   const { createdAt } = article.sys;
+  // console.log(thumbnail);
 
   return (
     <div className="card">
-      {/* <DummyImage /> */}
-
       <Image
         src={'https:' + thumbnail.fields.file.url}
-        alt={article.title}
-        width="350"
+        alt={thumbnail.fields.title}
+        width="250"
         height="200"
       />
       <div className="card-body">

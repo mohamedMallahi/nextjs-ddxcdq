@@ -4,6 +4,7 @@ import { useForm } from '../components/hooks';
 
 const Contact = () => {
   const [values, changeHandler, clearFields] = useForm({
+    email: '',
     subject: '',
     message: '',
   });
@@ -19,6 +20,17 @@ const Contact = () => {
         <title>NetBlogger | Contact Us</title>
       </Head>
       <form className="form" onSubmit={submitHandler}>
+        <div>
+          <label htmlFor="email">Email</label>
+          <input
+            className="form-control"
+            value={values.email}
+            onChange={changeHandler}
+            name="email"
+            type="text"
+            name="email"
+          />
+        </div>
         <div>
           <label htmlFor="subject">Subject</label>
           <input

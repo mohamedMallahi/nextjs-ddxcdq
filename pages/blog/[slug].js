@@ -1,10 +1,17 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import { createClient } from 'contentful';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+
+const client = createClient({
+  space: process.env.CONTENTFUL_SPACE_ID,
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+});
 
 export default function Blog({ article }) {
   const { title, thumbnail, body } = article.fields;
   const { createdAt } = article.sys;
-  console.log(article);
+  const articleComponent = documentToReactComponents(body);
   return (
     <>
       <Head>
@@ -19,32 +26,21 @@ export default function Blog({ article }) {
         <span style={{ fontSize: '13px', color: '#333' }}>
           {'Published in ' + new Date(createdAt).toDateString()}
         </span>
-        {/* <p>{article.body}</p>
-        {/* <p>{article}</p> */}
-        {body.content.map((node) => {
-          if (node.nodeType === 'paragraph') {
-            return (
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia
-                dolores sapiente officiis harum quaerat debitis at adipisci
-                quisquam exercitationem iste nesciunt culpa, eos ad cupiditate
-                iusto asperiores dolor. Illum quos nemo id distinctio a dolore
-                fugit nihil reprehenderit in voluptatem quis quasi modi nisi
-                nesciunt laboriosam soluta facere impedit non, quaerat iure.
-              </p>
-            );
-          }
-        })}
+        <div className={'image-container'}>
+          <Image
+            className="image"
+            src={'https:' + thumbnail.fields.file.url}
+            alt={thumbnail.fields.title}
+            layout="fill"
+          />
+        </div>
+        {articleComponent}
       </article>
     </>
   );
 }
 
 export async function getStaticProps(context) {
-  const client = await createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-  });
   const res = await client.getEntries({
     content_type: 'posts',
     'fields.slug[in]': context.params.slug,
@@ -59,10 +55,6 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-  });
   const res = await client.getEntries({ content_type: 'posts' });
   const data = res.items;
   console.log();
