@@ -47,15 +47,23 @@ export default function Blog({ article }) {
 }
 
 export async function getStaticProps(context) {
-  const res = await client.getEntries({
+  const { items } = await client.getEntries({
     content_type: 'posts',
     'fields.slug[in]': context.params.slug,
   });
 
-  console.log(res.items[0]);
+  if (!items.length) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
+
   return {
     props: {
-      article: res.items[0],
+      article: items[0],
     },
   };
 }

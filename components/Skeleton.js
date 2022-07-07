@@ -17,6 +17,7 @@ export default function Skeleton() {
         }
         .s-heading {
           height: 33px;
+          max-width: 150px;
         }
         .s-date {
           height: 18px;
@@ -30,8 +31,9 @@ export default function Skeleton() {
           height: 200px;
         }
         .s-content {
-          padding: 8px 0;
           max-width: 1000px;
+          padding: 8px 0;
+          height: 30px;
         }
       `}</style>
     </div>
