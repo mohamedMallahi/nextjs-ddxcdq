@@ -22,7 +22,7 @@ export default function Home({ articles }) {
       </div>
       <div className="articles">
         {articles.map((article) => (
-          <BlogCard key={article.sys.id} article={article} />
+          <BlogCard key={article.id} article={article} />
         ))}
       </div>
     </>
