@@ -1,5 +1,5 @@
 module.exports = {
   images: {
-    domains: ['images.ctfassets.net', 'www.free-css.com'],
+    domains: ['images.ctfassets.net', 'images.pexels.com'],
   },
 };

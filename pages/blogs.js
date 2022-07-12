@@ -14,19 +14,19 @@ export default function Blogs({ articles }) {
         />
       </Head>
       <div className="articles">
-        {/* {articles.map((article) => (
-          <BlogCard key={article.sys.id} article={article} />
-        ))} */}
+        {articles.map((article) => (
+          <BlogCard key={article.id} article={article} />
+        ))}
       </div>
     </>
   );
 }
 
 export const getStaticProps = async () => {
-  const colRef = await collection(db, 'messages');
+  const colRef = await collection(db, 'articles');
 
   const snapshot = await getDocs(colRef);
-  const posts = snapshot.docs.map((doc) => {
+  const articles = snapshot.docs.map((doc) => {
     return {
       ...doc.data(),
       id: doc.id,
@@ -35,7 +35,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      articles: posts,
+      articles: articles,
     },
   };
 };

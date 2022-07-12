@@ -1,5 +1,6 @@
 import Head from 'next/head';
-// import { createClient } from 'contentful';
+import { db } from '../config/firebase';
+import { collection, getDocs } from 'firebase/firestore';
 import BlogCard from '../components/BlogCard';
 
 export default function Home({ articles }) {
@@ -19,25 +20,29 @@ export default function Home({ articles }) {
         <h1>Welcome To NetBlogger!</h1>
         <p>Start editing to see some magic happen :)</p>
       </div>
-      {/* <div className="articles">
+      <div className="articles">
         {articles.map((article) => (
           <BlogCard key={article.sys.id} article={article} />
         ))}
-      </div> */}
+      </div>
     </>
   );
 }
 
-// export const getStaticProps = async () => {
-//   const client = createClient({
-//     space: process.env.CONTENTFUL_SPACE_ID,
-//     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-//   });
-//   const res = await client.getEntries({ content_type: 'posts' });
+export const getStaticProps = async () => {
+  const colRef = await collection(db, 'articles');
 
-//   return {
-//     props: {
-//       articles: res.items,
-//     },
-//   };
-// };
+  const snapshot = await getDocs(colRef);
+  const articles = snapshot.docs.map((doc) => {
+    return {
+      ...doc.data(),
+      id: doc.id,
+    };
+  });
+
+  return {
+    props: {
+      articles: articles,
+    },
+  };
+};
