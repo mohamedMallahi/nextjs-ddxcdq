@@ -6,12 +6,7 @@ const BlogCard = ({ article }) => {
 
   return (
     <div className="card">
-      <Image
-        src={'https:' + article.image}
-        alt={article.title}
-        width="250"
-        height="200"
-      />
+      <Image src={article.image} alt={article.title} width="250" height="200" />
       <div className="card-body">
         <h3 style={{ marginBottom: '0' }} className="card-title">
           {article.title}
