@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { createClient } from 'contentful';
+// import { createClient } from 'contentful';
 import BlogCard from '../components/BlogCard';
 
 export default function Home({ articles }) {
@@ -19,25 +19,25 @@ export default function Home({ articles }) {
         <h1>Welcome To NetBlogger!</h1>
         <p>Start editing to see some magic happen :)</p>
       </div>
-      <div className="articles">
+      {/* <div className="articles">
         {articles.map((article) => (
           <BlogCard key={article.sys.id} article={article} />
         ))}
-      </div>
+      </div> */}
     </>
   );
 }
 
-export const getStaticProps = async () => {
-  const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-  });
-  const res = await client.getEntries({ content_type: 'posts' });
+// export const getStaticProps = async () => {
+//   const client = createClient({
+//     space: process.env.CONTENTFUL_SPACE_ID,
+//     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+//   });
+//   const res = await client.getEntries({ content_type: 'posts' });
 
-  return {
-    props: {
-      articles: res.items,
-    },
-  };
-};
+//   return {
+//     props: {
+//       articles: res.items,
+//     },
+//   };
+// };

@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
+import { db } from '../config/firebase';
+import { collection, addDoc } from 'firebase/firestore';
 import { useForm } from '../components/hooks';
 
 const Contact = () => {
@@ -9,9 +11,15 @@ const Contact = () => {
     message: '',
   });
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
     console.log(values);
+    try {
+      const docRef = await addDoc(collection(db, 'messages'), { ...values });
+      console.log('Document written with ID: ', docRef.id);
+    } catch (e) {
+      console.error('Error adding document: ', e);
+    }
   };
 
   return (

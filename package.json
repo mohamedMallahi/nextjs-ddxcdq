@@ -8,12 +8,10 @@
     "start": "next start"
   },
   "dependencies": {
-    "@contentful/rich-text-react-renderer": "^15.12.1",
-    "contentful": "^9.1.32",
+    "firebase": "^9.9.0",
     "next": "^12.1.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "sass": "^1.53.0",
-    "use-subscription": "^1.8.0"
+    "sass": "^1.53.0"
   }
 }

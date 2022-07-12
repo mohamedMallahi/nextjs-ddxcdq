@@ -1,8 +1,10 @@
 import Head from 'next/head';
-import { createClient } from 'contentful';
+import { db } from '../config/firebase';
+import { collection, getDocs } from 'firebase/firestore';
 import BlogCard from '../components/BlogCard';
 
 export default function Blogs({ articles }) {
+  console.log(articles);
   return (
     <>
       <Head>
@@ -12,24 +14,28 @@ export default function Blogs({ articles }) {
         />
       </Head>
       <div className="articles">
-        {articles.map((article) => (
+        {/* {articles.map((article) => (
           <BlogCard key={article.sys.id} article={article} />
-        ))}
+        ))} */}
       </div>
     </>
   );
 }
 
 export const getStaticProps = async () => {
-  const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  const colRef = await collection(db, 'messages');
+
+  const snapshot = await getDocs(colRef);
+  const posts = snapshot.docs.map((doc) => {
+    return {
+      ...doc.data(),
+      id: doc.id,
+    };
   });
-  const res = await client.getEntries({ content_type: 'posts' });
 
   return {
     props: {
-      articles: res.items,
+      articles: posts,
     },
   };
 };
