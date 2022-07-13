@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import React from 'react';
 import { auth } from '../config/firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useForm } from '../components/hooks';
@@ -21,8 +20,7 @@ const SignUp = () => {
       );
       const user = userCredential.user;
     } catch (error) {
-      const errorCode = error.code;
-      const errorMessage = error.message;
+      console.log(error);
     }
   };
 
