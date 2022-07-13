@@ -1,40 +1,36 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-// import menuIcon from '../public/imgs/menu.png';
 
-const Navbar = () => {
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Button from 'react-bootstrap/Button';
+
+const NavbarMenu = () => {
   const router = useRouter();
 
   return (
-    <nav className="navbar">
-      <span className="navbar-brand">
-        <Link href="/">NetBlogger</Link>
-      </span>
-      <ul className="navbar-menu">
-        <li>
-          <Link href="/">Home</Link>
-        </li>
-        <li>
-          <Link href="/blogs">Blogs</Link>
-        </li>
-        <li>
-          <Link href="/contact">Contact</Link>
-        </li>
-        <li>
-          <button
-            style={{ cursor: 'pointer' }}
-            onClick={(e) => router.push('/signup')}
-            className="btn-green"
-          >
-            Sign Up
-          </button>
-        </li>
-      </ul>
-      <div className="navbar-hamburger">
-        <img src="/imgs/menu.png" />
-      </div>
-    </nav>
+    <Navbar bg="primary" variant="dark" expand="lg">
+      <Container>
+        <Navbar.Brand href="#home">NetBlogger</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Link href="/">
+              <a className="nav-link">Home</a>
+            </Link>
+            <Link href="/blogs">
+              <a className="nav-link">Blog</a>
+            </Link>
+            <Link href="/contact">
+              <a className="nav-link">Contact</a>
+            </Link>
+          </Nav>
+          <Button variant="success">Sign Up</Button>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 
-export default Navbar;
+export default NavbarMenu;

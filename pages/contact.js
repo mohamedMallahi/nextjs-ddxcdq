@@ -1,8 +1,9 @@
 import Head from 'next/head';
-import React from 'react';
 import { db } from '../config/firebase';
 import { collection, addDoc } from 'firebase/firestore';
 import { useForm } from '../components/hooks';
+
+import Button from 'react-bootstrap/Button';
 
 const Contact = () => {
   const [values, changeHandler, clearFields] = useForm({
@@ -61,9 +62,9 @@ const Contact = () => {
             name="message"
           />
         </div>
-        <button className="btn btn-block" type="submit">
+        <Button className="mt-2" variant="success" type="submit">
           Send
-        </button>
+        </Button>
       </form>
     </>
   );

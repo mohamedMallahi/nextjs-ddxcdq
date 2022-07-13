@@ -1,7 +1,10 @@
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import '../styles/globals.scss';
+
+// Bootstrap Components
+import Container from 'react-bootstrap/Container';
+import '../styles/styles.css';
 
 function Layout({ Component, pageProps }) {
   return (
@@ -10,9 +13,9 @@ function Layout({ Component, pageProps }) {
         <title>NetBlogger</title>
       </Head>
       <Navbar />
-      <main className="container">
+      <Container className="py-3">
         <Component {...pageProps} />
-      </main>
+      </Container>
       <Footer />
     </>
   );
