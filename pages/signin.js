@@ -17,8 +17,8 @@ const SignUp = () => {
     try {
       const userCredential = await signInWithEmailAndPassword(
         auth,
-        email,
-        password
+        value.email,
+        value.password
       );
       const user = userCredential.user;
     } catch (error) {

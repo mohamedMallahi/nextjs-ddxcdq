@@ -13,12 +13,11 @@ const SignUp = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    console.log(values);
     try {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
-        email,
-        password
+        value.email,
+        value.password
       );
       const user = userCredential.user;
     } catch (error) {
