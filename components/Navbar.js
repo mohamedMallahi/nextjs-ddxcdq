@@ -1,7 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
-import menuIcon from '../assets/imgs/menu.png';
+// import menuIcon from '../public/imgs/menu.png';
 
 const Navbar = () => {
   const router = useRouter();
@@ -32,7 +31,7 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="navbar-hamburger">
-        <Image src={menuIcon} width="32" height="32" />
+        <img src="/imgs/menu.png" />
       </div>
     </nav>
   );
