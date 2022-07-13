@@ -32,7 +32,7 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="navbar-hamburger">
-        <img src={menuIcon.src} />
+        <img src={menuIcon} />
       </div>
     </nav>
   );
