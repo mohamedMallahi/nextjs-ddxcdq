@@ -44,6 +44,17 @@
   width: max-content;
 }
 
+.btn-green {
+  border: 0;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: green;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  width: max-content;
+}
+
 .btn:hover {
   opacity: 0.8;
   cursor: pointer;

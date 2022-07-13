@@ -18,20 +18,22 @@ body {
   padding: 0.2rem 2rem;
   background-color: $primary-color;
 
-  .navbar span {
+  &-brand {
     font-weight: 700;
     display: block;
   }
 
-  ul {
+  &-menu {
     display: flex;
     align-items: center;
     justify-content: space-between;
     list-style-type: none;
-  }
+    margin: 0;
+    padding: 1rem;
 
-  li {
-    margin-left: 2rem;
+    li {
+      margin-left: 2rem;
+    }
   }
 
   a {
@@ -43,15 +45,22 @@ body {
       border-bottom: 1px solid #fff;
     }
   }
+  &-hamburger {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 720px) {
   .navbar {
-    padding: 0.2rem 1rem;
-  }
+    padding: 0.5rem 1rem;
 
-  .navbar li {
-    margin-left: 1rem !important;
+    &-menu {
+      display: none !important;
+    }
+
+    &-hamburger {
+      display: block;
+    }
   }
 }
 
