@@ -19,8 +19,8 @@ const NavbarMenu = () => {
             <Link href="/">
               <a className="nav-link">Home</a>
             </Link>
-            <Link href="/blogs">
-              <a className="nav-link">Blog</a>
+            <Link href="/articles">
+              <a className="nav-link">Articles</a>
             </Link>
             <Link href="/contact">
               <a className="nav-link">Contact</a>

@@ -16,7 +16,7 @@ export default function Home({ articles }) {
           content="WWRer6-6V5unAn3sfeiBZKwGroCeaADhXq09ePylNpk"
         />
       </Head>
-      <div className="banner">
+      <div className="bg-primary p-2 text-light text-center mb-3">
         <h1>Welcome To NetBlogger!</h1>
         <p>Start editing to see some magic happen :)</p>
       </div>

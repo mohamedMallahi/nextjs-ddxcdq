@@ -14,7 +14,7 @@ function BlogCard({ article }) {
           bulk of the card's content.
         </Card.Text>
         <Button
-          onClick={(e) => router.push(`/blog/${article.slug}`)}
+          onClick={(e) => router.push(`/article/${article.slug}`)}
           variant="primary"
         >
           Read More
