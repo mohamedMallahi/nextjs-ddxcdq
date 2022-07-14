@@ -6,7 +6,7 @@ import { useForm } from '../utils/hooks';
 
 const SignUp = () => {
   const [values, changeHandler, clearFields] = useForm({
-    fullname,
+    fullname: '',
     email: '',
     password: '',
   });
