@@ -6,6 +6,7 @@ import { useForm } from '../utils/hooks';
 
 const SignUp = () => {
   const [values, changeHandler, clearFields] = useForm({
+    fullname,
     email: '',
     password: '',
   });
@@ -19,6 +20,9 @@ const SignUp = () => {
         values.password
       );
       const user = userCredential.user;
+      user.updateProfile({
+        displayName: fullname,
+      });
     } catch (error) {
       console.log(error);
     }
@@ -30,6 +34,17 @@ const SignUp = () => {
         <title>NetBlogger | Contact Us</title>
       </Head>
       <form className="form" onSubmit={submitHandler}>
+        <div>
+          <label htmlFor="fullname">Fullname</label>
+          <input
+            className="form-control"
+            value={values.fullname}
+            onChange={changeHandler}
+            name="fullname"
+            type="text"
+            name="fullname"
+          />
+        </div>
         <div>
           <label htmlFor="email">Email</label>
           <input
