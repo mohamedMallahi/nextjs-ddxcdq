@@ -5,15 +5,19 @@ import { onAuthStateChanged } from 'firebase/auth';
 const AuthContext = createContext();
 
 export const useAuth = () => {
-  return useContext(AuthContext)
-}
+  return useContext(AuthContext);
+};
 
 export const AuthProvider = ({ children }) => {
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth), (user) => {
-      if(user) console.log(user)
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log(user);
+      }
     });
   }, []);
 
-  return <AuthContext.Provider value={{}}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={useAuth}>{children}</AuthContext.Provider>
+  );
 };

@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import getArticles from '../../utils/getArticles';
+import { useAuth } from '../../contexts/AuthContext';
 
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
@@ -7,6 +8,8 @@ import Badge from 'react-bootstrap/Badge';
 import Stack from 'react-bootstrap/Stack';
 
 export default function Admin({ articles }) {
+  const user
+
   return (
     <>
       <Head>
