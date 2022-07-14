@@ -8,7 +8,7 @@ import Badge from 'react-bootstrap/Badge';
 import Stack from 'react-bootstrap/Stack';
 
 export default function Admin({ articles }) {
-  const user
+  // const user
 
   return (
     <>
