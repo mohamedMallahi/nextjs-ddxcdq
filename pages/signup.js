@@ -20,8 +20,8 @@ const SignUp = () => {
         values.password
       );
       const user = userCredential.user;
-      user.updateProfile({
-        displayName: fullname,
+      await user.updateProfile({
+        displayName: values.fullname,
       });
     } catch (error) {
       console.log(error);
