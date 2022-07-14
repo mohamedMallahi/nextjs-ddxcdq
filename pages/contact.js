@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { db } from '../config/firebase';
 import { collection, addDoc } from 'firebase/firestore';
-import { useForm } from '../components/hooks';
+import { useForm } from '../utils/hooks';
 
 import Button from 'react-bootstrap/Button';
 

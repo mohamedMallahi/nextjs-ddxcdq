@@ -26,7 +26,9 @@ const NavbarMenu = () => {
               <a className="nav-link">Contact</a>
             </Link>
           </Nav>
-          <Button variant="success">Sign Up</Button>
+          <Link href="/signup" className="btn btn-success">
+            Sign Up
+          </Link>
         </Navbar.Collapse>
       </Container>
     </Navbar>

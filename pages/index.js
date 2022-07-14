@@ -1,7 +1,6 @@
 import Head from 'next/head';
-import { db } from '../config/firebase';
-import { collection, getDocs } from 'firebase/firestore';
 import BlogCard from '../components/BlogCard';
+import getArticles from '../utils/getArticles';
 
 export default function Home({ articles }) {
   return (
@@ -30,15 +29,7 @@ export default function Home({ articles }) {
 }
 
 export const getStaticProps = async () => {
-  const colRef = await collection(db, 'articles');
-
-  const snapshot = await getDocs(colRef);
-  const articles = snapshot.docs.map((doc) => {
-    return {
-      ...doc.data(),
-      id: doc.id,
-    };
-  });
+  const articles = await getArticles();
 
   return {
     props: {

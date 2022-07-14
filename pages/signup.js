@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { auth } from '../config/firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { useForm } from '../components/hooks';
+import { useForm } from '../utils/hooks';
 
 const SignUp = () => {
   const [values, changeHandler, clearFields] = useForm({
