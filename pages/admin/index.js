@@ -27,13 +27,13 @@ export default function Admin({ articles }) {
               <td>{article.title}</td>
               <td>2022</td>
               <td>
-                <Stack direction="horizontal" gap={3}>
+                <Stack direction="horizontal" gap={2}>
                   <Badge bg="secondary">Ninja</Badge>
                   <Badge bg="secondary">Dragon Ball</Badge>
                 </Stack>
               </td>
               <td>
-                <Stack direction="horizontal" gap={3}>
+                <Stack direction="horizontal" gap={2}>
                   <Button>Edit</Button>
                   <Button className="m">Delete</Button>
                 </Stack>

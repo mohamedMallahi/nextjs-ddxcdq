@@ -1,4 +1,7 @@
 import Head from 'next/head';
+import { AuthProvider } from '../contexts/AuthContext';
+
+// Custome Comp
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -8,7 +11,7 @@ import '../styles/styles.scss';
 
 function Layout({ Component, pageProps }) {
   return (
-    <>
+    <AuthProvider>
       <Head>
         <title>NetBlogger</title>
       </Head>
@@ -17,7 +20,7 @@ function Layout({ Component, pageProps }) {
         <Component {...pageProps} />
       </Container>
       <Footer />
-    </>
+    </AuthProvider>
   );
 }
 
