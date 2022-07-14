@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 
 // Bootstrap Components
 import Container from 'react-bootstrap/Container';
-import '../styles/styles.css';
+import '../styles/styles.scss';
 
 function Layout({ Component, pageProps }) {
   return (
