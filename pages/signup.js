@@ -19,10 +19,10 @@ const SignUp = () => {
         values.email,
         values.password
       );
+      console.log(userCredential);
       await userCredential.updateProfile({
         displayName: values.fullname,
       });
-      console.log(userCredential);
     } catch (error) {
       console.log(error);
     }
