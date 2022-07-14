@@ -4,6 +4,7 @@ import getArticles from '../../utils/getArticles';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import Badge from 'react-bootstrap/Badge';
+import Stack from 'react-bootstrap/Stack';
 
 export default function Admin({ articles }) {
   return (
@@ -26,8 +27,10 @@ export default function Admin({ articles }) {
               <td>{article.title}</td>
               <td>2022</td>
               <td>
-                <Badge bg="secondary">Ninja</Badge>
-                <Badge bg="secondary">Dragon Ball</Badge>
+                <Stack direction="horizontal" gap={3}>
+                  <Badge bg="secondary">Ninja</Badge>
+                  <Badge bg="secondary">Dragon Ball</Badge>
+                </Stack>
               </td>
               <td>
                 <Stack direction="horizontal" gap={3}>
