@@ -27,7 +27,7 @@ const NavbarMenu = () => {
             </Link>
           </Nav>
           <Link href="/signup" className="btn btn-success">
-            Sign Up
+            <a className="btn btn-success">Sign Up</a>
           </Link>
         </Navbar.Collapse>
       </Container>
