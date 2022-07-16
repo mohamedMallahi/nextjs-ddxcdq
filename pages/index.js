@@ -19,7 +19,7 @@ export default function Home({ articles }) {
         <h1>Welcome To NetBlogger!</h1>
         <p>Start editing to see some magic happen :)</p>
       </div>
-      <div className="d-flex align-items-center justify-content-between flex-md-column">
+      <div className="articles">
         {articles.map((article) => (
           <BlogCard key={article.id} article={article} />
         ))}

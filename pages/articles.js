@@ -13,7 +13,7 @@ export default function Blogs({ articles }) {
           content="Welcome To NetBlogger! Start editing to see some magic happen :)"
         />
       </Head>
-      <div className="d-flex align-items-center justify-content-between flex-md-column">
+      <div className="articles">
         {articles.map((article) => (
           <BlogCard key={article.id} article={article} />
         ))}

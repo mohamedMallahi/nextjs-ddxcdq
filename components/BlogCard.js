@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 function BlogCard({ article }) {
   const router = useRouter();
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card>
       <Card.Img variant="top" src={article.image} />
       <Card.Body>
         <Card.Title>{article.title}</Card.Title>

@@ -21,9 +21,19 @@
   }
 }
 
+.articles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
 @media screen and (max-width: 720px) {
   .image-container {
     width: calc(100vw - 3rem);
     height: 300px;
+  }
+
+  .articles {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
