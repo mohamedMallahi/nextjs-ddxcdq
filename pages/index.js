@@ -23,6 +23,12 @@ export default function Home({ articles }) {
         {articles.map((article) => (
           <BlogCard key={article.id} article={article} />
         ))}
+        {articles.map((article) => (
+          <BlogCard key={article.id} article={article} />
+        ))}
+        {articles.map((article) => (
+          <BlogCard key={article.id} article={article} />
+        ))}
       </div>
     </>
   );
