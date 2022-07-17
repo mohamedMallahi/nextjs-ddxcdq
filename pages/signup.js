@@ -67,7 +67,7 @@ const SignUp = () => {
             name="password"
           />
         </div>
-        <button className="btn-green btn-block" type="submit">
+        <button className="btn btn-success" type="submit">
           Sign Up
         </button>
         <p>
