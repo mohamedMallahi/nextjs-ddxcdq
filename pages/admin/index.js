@@ -1,8 +1,6 @@
 import Head from 'next/head';
-import { useRouter } from 'next/router';
-
+import ProtectedRoute from '../../components/ProtectedRoute';
 import getArticles from '../../utils/getArticles';
-import { useAuth } from '../../contexts/AuthContext';
 
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
@@ -10,15 +8,8 @@ import Badge from 'react-bootstrap/Badge';
 import Stack from 'react-bootstrap/Stack';
 
 export default function Admin({ articles }) {
-  const { user } = useAuth();
-  const router = useRouter();
-
-  if (!user) {
-    router.push('/signin');
-  }
-
   return (
-    <>
+    <ProtectedRoute>
       <Head>
         <meta name="robots" content="noindex" />
       </Head>
@@ -52,7 +43,7 @@ export default function Admin({ articles }) {
           ))}
         </tbody>
       </Table>
-    </>
+    </ProtectedRoute>
   );
 }
 

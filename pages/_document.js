@@ -19,7 +19,7 @@ export default function MyDocument() {
           href="https://bootswatch.com/5/litera/bootstrap.min.css"
         />
       </Head>
-      <body className="bg-primary">
+      <body className="">
         <Main />
         <NextScript />
       </body>
