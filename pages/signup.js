@@ -4,7 +4,7 @@ import { useForm } from '../utils/hooks';
 import { useAuth } from '../contexts/AuthContext';
 
 const SignUp = () => {
-  const { signin } = useAuth();
+  const { signup } = useAuth();
 
   const [values, changeHandler, clearFields] = useForm({
     fullname: '',
