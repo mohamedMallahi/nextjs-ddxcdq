@@ -1,7 +1,7 @@
 // comp
 import Head from 'next/head';
 import Link from 'next/link';
-import Footer from '../components/Footer'
+import Footer from '../components/Footer';
 
 // hooks
 import { useRouter } from 'next/router';
@@ -72,13 +72,13 @@ const SignIn = () => {
   );
 };
 
-SignIn.getLayout = PageLayout = (page) => {
+SignIn.getLayout = getLayout = (page) => {
   return (
     <>
       {page}
-      <Footer/>
+      <Footer />
     </>
-  )
-}
+  );
+};
 
 export default SignIn;
