@@ -7,7 +7,7 @@ import { useForm } from '../utils/hooks';
 const SignUp = () => {
   const { user, signin } = useAuth();
   const router = useRouter();
-  console.log(user);
+
   const [values, changeHandler, clearFields] = useForm({
     email: '',
     password: '',

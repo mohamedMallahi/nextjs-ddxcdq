@@ -31,9 +31,14 @@ const NavbarMenu = () => {
             </Link>
           </Nav>
           {user ? (
-            <button onClick={(e) => signout()} className="btn btn-danger">
-              Sign Out
-            </button>
+            <>
+              <Link href="/admin">
+                <a className="btn btn-info">Admin</a>
+              </Link>
+              <button onClick={(e) => signout()} className="btn btn-danger">
+                Sign Out
+              </button>
+            </>
           ) : (
             <button
               onClick={(e) => router.push('/signup')}
