@@ -72,7 +72,7 @@ const SignIn = () => {
   );
 };
 
-SignIn.getLayout = function PageLayout(page) => {
+SignIn.getLayout = PageLayout = (page) => {
   return (
     <>
       {page}

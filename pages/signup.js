@@ -85,7 +85,7 @@ const SignUp = () => {
   );
 };
 
-SignUp.getLayout = function PageLayout(page) => {
+SignUp.getLayout = PageLayout = (page) => {
   return (
     <>
       {page}
