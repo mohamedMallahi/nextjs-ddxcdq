@@ -14,46 +14,46 @@ export default function Admin({ articles }) {
   const router = useRouter;
 
   if (!user) {
-    return router.push('/signin');
-  }
-
-  return (
-    <>
-      <Head>
-        <meta name="robots" content="noindex" />
-      </Head>
-      <Table>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Published At</th>
-            <th>Tags</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {articles.map((article) => (
+    router.push('/signin');
+  } else {
+    return (
+      <>
+        <Head>
+          <meta name="robots" content="noindex" />
+        </Head>
+        <Table>
+          <thead>
             <tr>
-              <td>{article.title}</td>
-              <td>2022</td>
-              <td>
-                <Stack direction="horizontal" gap={2}>
-                  <Badge bg="secondary">Ninja</Badge>
-                  <Badge bg="secondary">Dragon Ball</Badge>
-                </Stack>
-              </td>
-              <td>
-                <Stack direction="horizontal" gap={2}>
-                  <Button>Edit</Button>
-                  <Button className="m">Delete</Button>
-                </Stack>
-              </td>
+              <th>Title</th>
+              <th>Published At</th>
+              <th>Tags</th>
+              <th>Action</th>
             </tr>
-          ))}
-        </tbody>
-      </Table>
-    </>
-  );
+          </thead>
+          <tbody>
+            {articles.map((article) => (
+              <tr>
+                <td>{article.title}</td>
+                <td>2022</td>
+                <td>
+                  <Stack direction="horizontal" gap={2}>
+                    <Badge bg="secondary">Ninja</Badge>
+                    <Badge bg="secondary">Dragon Ball</Badge>
+                  </Stack>
+                </td>
+                <td>
+                  <Stack direction="horizontal" gap={2}>
+                    <Button>Edit</Button>
+                    <Button className="m">Delete</Button>
+                  </Stack>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </>
+    );
+  }
 }
 
 export const getStaticProps = async () => {
