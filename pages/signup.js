@@ -1,8 +1,13 @@
+// comp
 import Head from 'next/head';
 import Link from 'next/link';
+import Footer from '../components/Footer'
+
+// hooks
 import { useRouter } from 'next/router';
 import { useForm } from '../utils/hooks';
 import { useAuth } from '../contexts/AuthContext';
+
 
 const SignUp = () => {
   const { signup } = useAuth();
@@ -79,5 +84,14 @@ const SignUp = () => {
     </>
   );
 };
+
+SignUp.getLayout = function PageLayout(page) => {
+  return (
+    <>
+      {page}
+      <Footer/>
+    </>
+  )
+}
 
 export default SignUp;

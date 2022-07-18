@@ -1,10 +1,14 @@
+// comp
 import Head from 'next/head';
 import Link from 'next/link';
+import Footer from '../components/Footer'
+
+// hooks
 import { useRouter } from 'next/router';
 import { useAuth } from '../contexts/AuthContext';
 import { useForm } from '../utils/hooks';
 
-const SignUp = () => {
+const SignIn = () => {
   const { user, signin } = useAuth();
   const router = useRouter();
 
@@ -68,4 +72,13 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+SignIn.getLayout = function PageLayout(page) => {
+  return (
+    <>
+      {page}
+      <Footer/>
+    </>
+  )
+}
+
+export default SignIn;
