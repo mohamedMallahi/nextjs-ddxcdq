@@ -14,7 +14,7 @@ export default function Admin({ articles }) {
   const router = useRouter;
 
   if (!user) {
-    router.push('/signin');
+    return router.push('/signin');
   }
 
   return (
