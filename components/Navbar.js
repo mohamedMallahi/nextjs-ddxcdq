@@ -12,7 +12,9 @@ const NavbarMenu = () => {
   return (
     <Navbar bg="primary" variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand href="/">NetBlogger</Navbar.Brand>
+        <Link href="/">
+          <Navbar.Brand className="text-warning">NetBlogger</Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

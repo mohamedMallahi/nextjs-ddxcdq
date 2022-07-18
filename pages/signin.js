@@ -1,11 +1,12 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import React from 'react';
-import { auth } from '../config/firebase';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { useAuth } from '../contexts/AuthContext';
 import { useForm } from '../utils/hooks';
 
 const SignUp = () => {
+  const { signin } = useAuth();
+
   const [values, changeHandler, clearFields] = useForm({
     email: '',
     password: '',
@@ -13,17 +14,10 @@ const SignUp = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    console.log(values);
     try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        values.email,
-        values.password
-      );
-      const user = userCredential.user;
-    } catch (error) {
-      const errorCode = error.code;
-      const errorMessage = error.message;
+      await singin(values.email, values.password);
+    } catch (err) {
+      console.log(err);
     }
   };
 
@@ -32,36 +26,42 @@ const SignUp = () => {
       <Head>
         <title>NetBlogger | Contact Us</title>
       </Head>
-      <form className="form" onSubmit={submitHandler}>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input
-            className="form-control"
-            value={values.email}
-            onChange={changeHandler}
-            name="email"
-            type="text"
-            name="email"
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <input
-            className="form-control"
-            value={values.password}
-            onChange={changeHandler}
-            name="password"
-            type="password"
-            name="password"
-          />
-        </div>
-        <button className="btn btn-success" type="submit">
-          Sign In
-        </button>
-        <p>
-          Don't have an account? <Link href="/signup">Sign up</Link>
-        </p>
-      </form>
+      <div className="form-sign">
+        <form onSubmit={submitHandler}>
+          <h1 class="h3 mb-3 fw-normal text-center">Please sign in</h1>
+          <div>
+            <label htmlFor="email">Email</label>
+            <input
+              className="form-control"
+              value={values.email}
+              onChange={changeHandler}
+              name="email"
+              type="text"
+              name="email"
+            />
+          </div>
+          <div>
+            <label htmlFor="password">Password</label>
+            <input
+              className="form-control"
+              value={values.password}
+              onChange={changeHandler}
+              name="password"
+              type="password"
+              name="password"
+            />
+          </div>
+          <button className="btn btn-success" type="submit">
+            Sign In
+          </button>
+          <p>
+            Don't have an account?{' '}
+            <Link href="/signup">
+              <a className="text-light">Sign up</a>
+            </Link>
+          </p>
+        </form>
+      </div>
     </>
   );
 };

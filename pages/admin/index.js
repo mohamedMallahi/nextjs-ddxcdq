@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import useRouter from 'next/router';
+
 import getArticles from '../../utils/getArticles';
 import { useAuth } from '../../contexts/AuthContext';
 
@@ -8,7 +10,12 @@ import Badge from 'react-bootstrap/Badge';
 import Stack from 'react-bootstrap/Stack';
 
 export default function Admin({ articles }) {
-  // const user
+  const { user } = useAuth();
+  const router = useRouter;
+
+  if (!user) {
+    router.push('/signin');
+  }
 
   return (
     <>

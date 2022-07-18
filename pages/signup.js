@@ -1,10 +1,11 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { auth } from '../config/firebase';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useForm } from '../utils/hooks';
+import { useAuth } from '../contexts/AuthContext';
 
 const SignUp = () => {
+  const { signin } = useAuth();
+
   const [values, changeHandler, clearFields] = useForm({
     fullname: '',
     email: '',
@@ -14,17 +15,9 @@ const SignUp = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        values.email,
-        values.password
-      );
-      console.log(userCredential);
-      await userCredential.updateProfile({
-        displayName: values.fullname,
-      });
-    } catch (error) {
-      console.log(error);
+      await signup(values.email, values.password);
+    } catch (err) {
+      console.log(err);
     }
   };
 
@@ -33,47 +26,53 @@ const SignUp = () => {
       <Head>
         <title>NetBlogger | Contact Us</title>
       </Head>
-      <form className="form" onSubmit={submitHandler}>
-        <div>
-          <label htmlFor="fullname">Fullname</label>
-          <input
-            className="form-control"
-            value={values.fullname}
-            onChange={changeHandler}
-            name="fullname"
-            type="text"
-            name="fullname"
-          />
-        </div>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input
-            className="form-control"
-            value={values.email}
-            onChange={changeHandler}
-            name="email"
-            type="text"
-            name="email"
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <input
-            className="form-control"
-            value={values.password}
-            onChange={changeHandler}
-            name="password"
-            type="password"
-            name="password"
-          />
-        </div>
-        <button className="btn btn-success" type="submit">
-          Sign Up
-        </button>
-        <p>
-          Already have an account? <Link href="/signin">Sign In</Link>
-        </p>
-      </form>
+      <div className="form-sign">
+        <form onSubmit={submitHandler}>
+          <h1 class="h3 mb-3 fw-normal text-center">Please sign up</h1>
+          <div className="form-floating">
+            <input
+              className="form-control"
+              value={values.fullname}
+              onChange={changeHandler}
+              name="fullname"
+              type="text"
+              name="fullname"
+            />
+            <label htmlFor="fullname">Fullname</label>
+          </div>
+          <div className="form-floating">
+            <input
+              className="form-control"
+              value={values.email}
+              onChange={changeHandler}
+              name="email"
+              type="text"
+              name="email"
+            />
+            <label htmlFor="email">Email</label>
+          </div>
+          <div className="form-floating">
+            <input
+              className="form-control"
+              value={values.password}
+              onChange={changeHandler}
+              name="password"
+              type="password"
+              name="password"
+            />
+            <label htmlFor="password">Password</label>
+          </div>
+          <button className="btn btn-success" type="submit">
+            Sign Up
+          </button>
+          <p>
+            Already have an account?{' '}
+            <Link href="/signin">
+              <a className="text-light">Sign In</a>
+            </Link>
+          </p>
+        </form>
+      </div>
     </>
   );
 };
