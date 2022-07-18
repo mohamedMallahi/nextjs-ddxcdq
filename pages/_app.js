@@ -1,12 +1,8 @@
 import Head from 'next/head';
 import { AuthProvider } from '../contexts/AuthContext';
 
-// Custome Comp
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-
-// Bootstrap Components
-import Container from 'react-bootstrap/Container';
 import '../styles/styles.scss';
 
 function Layout({ Component, pageProps }) {
@@ -16,9 +12,9 @@ function Layout({ Component, pageProps }) {
         <title>NetBlogger</title>
       </Head>
       <Navbar />
-      <Container className="py-3">
+      <main className="container py-3">
         <Component {...pageProps} />
-      </Container>
+      </main>
       <Footer />
     </AuthProvider>
   );

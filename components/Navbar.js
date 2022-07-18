@@ -12,8 +12,8 @@ const NavbarMenu = () => {
   const router = useRouter();
 
   return (
-    <Navbar bg="primary" variant="dark" expand="lg">
-      <Container>
+    <nav className="navbar navbar-dark bg-primary">
+      <div className="container">
         <Link href="/">
           <Navbar.Brand className="text-warning">NetBlogger</Navbar.Brand>
         </Link>
@@ -48,8 +48,8 @@ const NavbarMenu = () => {
             </button>
           )}
         </Navbar.Collapse>
-      </Container>
-    </Navbar>
+      </div>
+    </nab>
   );
 };
 
