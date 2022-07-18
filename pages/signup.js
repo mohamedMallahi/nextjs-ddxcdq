@@ -1,10 +1,12 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useForm } from '../utils/hooks';
 import { useAuth } from '../contexts/AuthContext';
 
 const SignUp = () => {
   const { signup } = useAuth();
+  const router = useRouter();
 
   const [values, changeHandler, clearFields] = useForm({
     fullname: '',
@@ -16,6 +18,7 @@ const SignUp = () => {
     e.preventDefault();
     try {
       await signup(values.email, values.password);
+      router.push('/signin');
     } catch (err) {
       console.log(err);
     }
@@ -24,11 +27,11 @@ const SignUp = () => {
   return (
     <>
       <Head>
-        <title>NetBlogger | Contact Us</title>
+        <title>NetBlogger | Sign Up</title>
       </Head>
       <div className="form-sign">
         <form onSubmit={submitHandler}>
-          <h1 class="h3 mb-3 fw-normal text-center">Please sign up</h1>
+          <h1 className="h3 mb-3 fw-normal text-center">Please sign up</h1>
           <div className="form-floating">
             <input
               className="form-control"

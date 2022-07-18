@@ -1,11 +1,12 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import React from 'react';
+import { useRouter } from 'next/router';
 import { useAuth } from '../contexts/AuthContext';
 import { useForm } from '../utils/hooks';
 
 const SignUp = () => {
   const { signin } = useAuth();
+  const router = useRouter();
 
   const [values, changeHandler, clearFields] = useForm({
     email: '',
@@ -15,7 +16,8 @@ const SignUp = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      await singin(values.email, values.password);
+      await signin(values.email, values.password);
+      router.push('/admin');
     } catch (err) {
       console.log(err);
     }
@@ -28,7 +30,7 @@ const SignUp = () => {
       </Head>
       <div className="form-sign">
         <form onSubmit={submitHandler}>
-          <h1 class="h3 mb-3 fw-normal text-center">Please sign in</h1>
+          <h1 className="h3 mb-3 fw-normal text-center">Please sign in</h1>
           <div>
             <label htmlFor="email">Email</label>
             <input

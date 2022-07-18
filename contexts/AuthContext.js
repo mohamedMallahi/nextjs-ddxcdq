@@ -34,19 +34,11 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const signup = async (email, password) => {
-    const userCredential = await createUserWithEmailAndPassword(
-      auth,
-      values.email,
-      values.password
-    );
+    await createUserWithEmailAndPassword(auth, email, password);
   };
 
   const signin = async (email, password) => {
-    const userCredential = await signInWithEmailAndPassword(
-      auth,
-      values.email,
-      values.password
-    );
+    await signInWithEmailAndPassword(auth, email, password);
   };
 
   const signout = async () => {
