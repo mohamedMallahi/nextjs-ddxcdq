@@ -6,6 +6,14 @@ import Footer from '../components/Footer';
 import '../styles/styles.scss';
 
 function Layout({ Component, pageProps }) {
+  if (Component.getLayout) {
+    return (
+      <AuthProvider>
+        {Component.getLayout(<Component {...pageProps} />)}
+      </AuthProvider>
+    );
+  }
+
   return (
     <AuthProvider>
       <Head>
