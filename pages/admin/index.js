@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import useRouter from 'next/router';
+import { useRouter } from 'next/router';
 
 import getArticles from '../../utils/getArticles';
 import { useAuth } from '../../contexts/AuthContext';
