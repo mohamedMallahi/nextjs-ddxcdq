@@ -49,7 +49,7 @@ const NavbarMenu = () => {
           )}
         </Navbar.Collapse>
       </div>
-    </nab>
+    </nav>
   );
 };
 
