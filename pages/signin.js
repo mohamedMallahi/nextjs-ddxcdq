@@ -72,7 +72,7 @@ const SignIn = () => {
   );
 };
 
-SignIn.getLayout = getLayout = (page) => {
+SignIn.getLayout = (page) => {
   return (
     <>
       {page}
