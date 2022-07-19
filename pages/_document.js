@@ -18,6 +18,10 @@ export default function MyDocument() {
           rel="stylesheet"
           href="https://bootswatch.com/5/litera/bootstrap.min.css"
         />
+        <script
+          defer
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        ></script>
       </Head>
       <body className="">
         <Main />

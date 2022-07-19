@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import ProtectedRoute from '../../components/ProtectedRoute';
 import getArticles from '../../utils/getArticles';
+import AdminLayout from '../../components/AdminLayout';
 
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
@@ -12,6 +13,10 @@ export default function Admin({ articles }) {
     <ProtectedRoute>
       <Head>
         <meta name="robots" content="noindex" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
       </Head>
       <Table>
         <thead>
@@ -46,6 +51,14 @@ export default function Admin({ articles }) {
     </ProtectedRoute>
   );
 }
+
+Admin.getLayout = (page) => {
+  return (
+    <>
+      <AdminLayout>{page}</AdminLayout>
+    </>
+  );
+};
 
 export const getStaticProps = async () => {
   const articles = await getArticles();

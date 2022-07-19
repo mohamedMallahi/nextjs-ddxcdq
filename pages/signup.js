@@ -1,13 +1,12 @@
 // comp
 import Head from 'next/head';
 import Link from 'next/link';
-import Footer from '../components/Footer'
+import Footer from '../components/Footer';
 
 // hooks
 import { useRouter } from 'next/router';
 import { useForm } from '../utils/hooks';
 import { useAuth } from '../contexts/AuthContext';
-
 
 const SignUp = () => {
   const { signup } = useAuth();
@@ -34,52 +33,54 @@ const SignUp = () => {
       <Head>
         <title>NetBlogger | Sign Up</title>
       </Head>
-      <div className="form-sign">
-        <form onSubmit={submitHandler}>
-          <h1 className="h3 mb-3 fw-normal text-center">Please sign up</h1>
-          <div className="form-floating">
-            <input
-              className="form-control"
-              value={values.fullname}
-              onChange={changeHandler}
-              name="fullname"
-              type="text"
-              name="fullname"
-            />
-            <label htmlFor="fullname">Fullname</label>
-          </div>
-          <div className="form-floating">
-            <input
-              className="form-control"
-              value={values.email}
-              onChange={changeHandler}
-              name="email"
-              type="text"
-              name="email"
-            />
-            <label htmlFor="email">Email</label>
-          </div>
-          <div className="form-floating">
-            <input
-              className="form-control"
-              value={values.password}
-              onChange={changeHandler}
-              name="password"
-              type="password"
-              name="password"
-            />
-            <label htmlFor="password">Password</label>
-          </div>
-          <button className="btn btn-success" type="submit">
-            Sign Up
-          </button>
-          <p>
-            Already have an account?{' '}
-            <Link href="/signin">
-              <a className="text-light">Sign In</a>
-            </Link>
-          </p>
-        </form>
+      <div className="container-sign">
+        <div className="form-sign">
+          <form onSubmit={submitHandler}>
+            <h1 className="h3 mb-3 fw-normal text-center">Please Sign Up</h1>
+            <div className="form-floating mb-3">
+              <input
+                className="form-control"
+                value={values.fullname}
+                onChange={changeHandler}
+                name="fullname"
+                type="text"
+                name="fullname"
+              />
+              <label htmlFor="fullname">Fullname</label>
+            </div>
+            <div className="form-floating mb-3">
+              <input
+                className="form-control"
+                value={values.email}
+                onChange={changeHandler}
+                name="email"
+                type="text"
+                name="email"
+              />
+              <label htmlFor="email">Email</label>
+            </div>
+            <div className="form-floating mb-3">
+              <input
+                className="form-control"
+                value={values.password}
+                onChange={changeHandler}
+                name="password"
+                type="password"
+                name="password"
+              />
+              <label htmlFor="password">Password</label>
+            </div>
+            <button className="btn btn-success mb-2" type="submit">
+              Sign Up
+            </button>
+            <p>
+              Already have an account?{' '}
+              <Link href="/signin">
+                <a>Sign In</a>
+              </Link>
+            </p>
+          </form>
+        </div>
       </div>
     </>
   );
@@ -89,9 +90,9 @@ SignUp.getLayout = (page) => {
   return (
     <>
       {page}
-      <Footer/>
+      <Footer />
     </>
-  )
-}
+  );
+};
 
 export default SignUp;
