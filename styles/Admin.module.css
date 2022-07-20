@@ -15,7 +15,7 @@
 }
 
 .sidebarWrapper .list-group {
-  width: 15rem;
+  max-width: 100%;
 }
 
 .pageContentWrapper {

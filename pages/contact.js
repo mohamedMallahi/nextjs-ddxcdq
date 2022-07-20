@@ -3,8 +3,6 @@ import { db } from '../config/firebase';
 import { collection, addDoc } from 'firebase/firestore';
 import { useForm } from '../utils/hooks';
 
-import Button from 'react-bootstrap/Button';
-
 const Contact = () => {
   const [values, changeHandler, clearFields] = useForm({
     email: '',
@@ -18,6 +16,7 @@ const Contact = () => {
     try {
       const docRef = await addDoc(collection(db, 'messages'), { ...values });
       console.log('Document written with ID: ', docRef.id);
+      clearFields();
     } catch (e) {
       console.error('Error adding document: ', e);
     }
@@ -62,9 +61,9 @@ const Contact = () => {
             name="message"
           />
         </div>
-        <Button className="mt-2" variant="success" type="submit">
+        <button className="btn btn-success mt-2" type="submit">
           Send
-        </Button>
+        </button>
       </form>
     </>
   );

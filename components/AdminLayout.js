@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from '../styles/Admin.module.css';
 
 const AdminLayout = ({ children }) => {
@@ -8,26 +9,26 @@ const AdminLayout = ({ children }) => {
   return (
     <div className={`${styles.wrapper} d-flex`}>
       <div
-        className={`sidebarWrapper ${styles.sidebarWrapper} border-end bg-white`}
+        className={`sidebarWrapper ${styles.sidebarWrapper} border-end bg-primary`}
       >
-        <div class={`${styles.sidebarHeading} border-bottom bg-light`}>
+        <div
+          className={`${styles.sidebarHeading} border-bottom bg-primar text-light`}
+        >
           NetBlogger
         </div>
-        <div class="list-group list-group-flush">
+        <div className="list-group list-group-flush">
+          <Link href="/admin/new-article">
+            <a className="list-group-item list-group-item-action bg-primary text-light p-3">
+              New Article
+            </a>
+          </Link>
+          <Link href="/admin">
+            <a className="list-group-item list-group-item-action bg-primary text-light p-3">
+              Dashboard
+            </a>
+          </Link>
           <a
-            class="list-group-item list-group-item-action list-group-item-light p-3"
-            href="#!"
-          >
-            Dashboard
-          </a>
-          <a
-            class="list-group-item list-group-item-action list-group-item-light p-3"
-            href="#!"
-          >
-            Shortcuts
-          </a>
-          <a
-            class="list-group-item list-group-item-action list-group-item-light p-3"
+            className="list-group-item list-group-item-action bg-primary text-light p-3"
             href="#!"
           >
             Overview
@@ -36,13 +37,13 @@ const AdminLayout = ({ children }) => {
       </div>
 
       <div className={styles.pageContentWrapper}>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-          <div class="container-fluid">
-            <button class="btn btn-primary" onClick={handleSidebarToggle}>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <div className="container-fluid">
+            <button className="btn btn-primary" onClick={handleSidebarToggle}>
               Toggle Menu
             </button>
             <button
-              class="navbar-toggler"
+              className="navbar-toggler"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent"
@@ -50,17 +51,20 @@ const AdminLayout = ({ children }) => {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span class="navbar-toggler-icon"></span>
+              <span className="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#!">
+            <div
+              className="collapse navbar-collapse"
+              id="navbarSupportedContent"
+            >
+              <ul className="navbar-nav ms-auto mt-2 mt-lg-0">
+                <li className="nav-item active">
+                  <a className="nav-link" href="#!">
                     Home
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#!">
+                <li className="nav-item">
+                  <a className="nav-link" href="#!">
                     Link
                   </a>
                 </li>
@@ -69,10 +73,7 @@ const AdminLayout = ({ children }) => {
           </div>
         </nav>
 
-        <div class="container-fluid">
-          <h1 class="mt-4">Simple Sidebar</h1>
-          {children}
-        </div>
+        <div className="container-fluid py-2">{children}</div>
       </div>
     </div>
   );
