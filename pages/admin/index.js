@@ -3,11 +3,6 @@ import ProtectedRoute from '../../components/ProtectedRoute';
 import getArticles from '../../utils/getArticles';
 import AdminLayout from '../../components/AdminLayout';
 
-import Table from 'react-bootstrap/Table';
-import Button from 'react-bootstrap/Button';
-import Badge from 'react-bootstrap/Badge';
-import Stack from 'react-bootstrap/Stack';
-
 export default function Admin({ articles }) {
   return (
     <ProtectedRoute>
@@ -18,7 +13,7 @@ export default function Admin({ articles }) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
       </Head>
-      <Table>
+      <table className="table table-hover">
         <thead>
           <tr>
             <th>Title</th>
@@ -33,21 +28,21 @@ export default function Admin({ articles }) {
               <td>{article.title}</td>
               <td>2022</td>
               <td>
-                <Stack direction="horizontal" gap={2}>
-                  <Badge bg="secondary">Ninja</Badge>
-                  <Badge bg="secondary">Dragon Ball</Badge>
-                </Stack>
+                <div clasName="d-flex">
+                  <span className="badge bg-secondary">Ninja</span>
+                  <span className="badge bg-secondary">Dragon Ball</span>
+                </div>
               </td>
               <td>
-                <Stack direction="horizontal" gap={2}>
-                  <Button>Edit</Button>
-                  <Button className="m">Delete</Button>
-                </Stack>
+                <div clasName="d-flex">
+                  <button className="btn btn-info">Edit</button>
+                  <button className="btn btn-danger">Delete</button>
+                </div>
               </td>
             </tr>
           ))}
         </tbody>
-      </Table>
+      </table>
     </ProtectedRoute>
   );
 }

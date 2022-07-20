@@ -5,22 +5,22 @@ import Card from 'react-bootstrap/Card';
 function BlogCard({ article }) {
   const router = useRouter();
   return (
-    <Card>
-      <Card.Img variant="top" src={article.image} />
-      <Card.Body>
-        <Card.Title>{article.title}</Card.Title>
-        <Card.Text>
+    <div className="card">
+      <img src={article.image} className="card-img-top" alt={article.title} />
+      <div className="card-body">
+        <h5 class="card-title">{article.title}</h5>
+        <p class="card-text">
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
-        </Card.Text>
-        <Button
+        </p>
+        <button
+          className="btn btn-primary"
           onClick={(e) => router.push(`/article/${article.slug}`)}
-          variant="primary"
         >
           Read More
-        </Button>
-      </Card.Body>
-    </Card>
+        </button>
+      </div>
+    </div>
   );
 }
 

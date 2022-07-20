@@ -2,12 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useAuth } from '../contexts/AuthContext';
 
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import Button from 'react-bootstrap/Button';
-
-const NavbarMenu = () => {
+const Navbar = () => {
   const { user, signout } = useAuth();
   const router = useRouter();
 
@@ -15,11 +10,21 @@ const NavbarMenu = () => {
     <nav className="navbar navbar-dark bg-primary">
       <div className="container">
         <Link href="/">
-          <Navbar.Brand className="text-warning">NetBlogger</Navbar.Brand>
+          <a className="navbar-brand">NetBlogger</a>
         </Link>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>{' '}
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <Link href="/">
               <a className="nav-link">Home</a>
             </Link>
@@ -29,7 +34,7 @@ const NavbarMenu = () => {
             <Link href="/contact">
               <a className="nav-link">Contact</a>
             </Link>
-          </Nav>
+          </ul>
           {user ? (
             <>
               <Link href="/admin">
@@ -47,10 +52,10 @@ const NavbarMenu = () => {
               Sign Up
             </button>
           )}
-        </Navbar.Collapse>
+        </div>
       </div>
     </nav>
   );
 };
 
-export default NavbarMenu;
+export default Navbar;
