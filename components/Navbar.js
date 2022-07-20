@@ -7,13 +7,13 @@ const Navbar = () => {
   const router = useRouter();
 
   return (
-    <nav className="navbar navbar-dark bg-primary">
-      <div className="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
         <Link href="/">
-          <a className="navbar-brand">NetBlogger</a>
+          <a class="navbar-brand">NetBlogger</a>
         </Link>
         <button
-          className="navbar-toggler"
+          class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -21,24 +21,36 @@ const Navbar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
-        </button>{' '}
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <Link href="/">
-              <a className="nav-link">Home</a>
-            </Link>
-            <Link href="/articles">
-              <a className="nav-link">Articles</a>
-            </Link>
-            <Link href="/contact">
-              <a className="nav-link">Contact</a>
-            </Link>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <Link href="/">
+                <a class="nav-link" aria-current="page">
+                  Home
+                </a>
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link href="/articles">
+                <a class="nav-link" aria-current="page">
+                  Articles
+                </a>
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link href="/contact">
+                <a class="nav-link" aria-current="page">
+                  Contact
+                </a>
+              </Link>
+            </li>
           </ul>
           {user ? (
             <>
               <Link href="/admin">
-                <a className="btn btn-info">Admin</a>
+                <a className="btn btn-info  me-2">Admin</a>
               </Link>
               <button onClick={(e) => signout()} className="btn btn-danger">
                 Sign Out
