@@ -1,5 +1,5 @@
 import { db } from '../config/firebase';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, addDoc } from 'firebase/firestore';
 
 export default async function addArticle(newArticle) {
   const colRef = await collection(db, 'articles');
