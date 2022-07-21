@@ -4,7 +4,7 @@ const Header = () => {
       className="masthead"
       style={{
         backgroundImage:
-          "url('https://images.pexels.com/photos/4245826/pexels-photo-4245826.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
+          "url('https://images.pexels.com/photos/4245826/pexels-photo-4245826.jpeg?auto=compress&cs=tinysrgb&w=620')",
       }}
     >
       <div className="container position-relative px-4 px-lg-5">
