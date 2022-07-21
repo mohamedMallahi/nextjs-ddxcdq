@@ -5,7 +5,6 @@ import Head from 'next/head';
 import dynamic from 'next/dynamic';
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 import 'react-quill/dist/quill.snow.css';
-import parse from 'html-react-parser';
 import slug from 'slug';
 
 import { useForm } from '../../utils/hooks';
