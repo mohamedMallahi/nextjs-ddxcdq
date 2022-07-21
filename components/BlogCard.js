@@ -8,17 +8,14 @@ function BlogCard({ article }) {
       <img className="article-image" src={article.image} alt={article.title} />
       <div className="article-text">
         <Link href={`article/${article.slug}`}>
-          <>
-            <h2 class="post-title">{article.title}</h2>
-            {/* <h3 class="post-subtitle">{article.subtitle}</h3> */}
-            <h3 class="post-subtitle">
-              A Chinese tale tells of some men sent to harm
-            </h3>
-          </>
+          <h2 class="post-title">{article.title}</h2>
         </Link>
+        <h3 class="post-subtitle">
+          A Chinese tale tells of some men sent to harm
+        </h3>
         <p class="post-meta">
           Posted by
-          <a href="#!">Start Bootstrap</a> on September 24, 2022
+          <Link href="/">{article.author}</Link> on September 24, 2022
         </p>
       </div>
     </div>
