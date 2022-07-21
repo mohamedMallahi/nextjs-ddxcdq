@@ -1,24 +1,19 @@
 import { useRouter } from 'next/router';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 
 function BlogCard({ article }) {
   const router = useRouter();
   return (
-    <div className="card">
-      <img src={article.image} className="card-img-top" alt={article.title} />
-      <div className="card-body">
-        <h5 class="card-title">{article.title}</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+    <div class="article-card ">
+      <img className="article-image" src={article.image} alt={article.title} />
+      <div className="article-text">
+        <a href="#">
+          <h2 class="post-title">{article.title}</h2>
+          <h3 class="post-subtitle">{article.subtitle}</h3>
+        </a>
+        <p class="post-meta">
+          Posted by
+          <a href="#!">Start Bootstrap</a> on September 24, 2022
         </p>
-        <button
-          className="btn btn-primary"
-          onClick={(e) => router.push(`/article/${article.slug}`)}
-        >
-          Read More
-        </button>
       </div>
     </div>
   );

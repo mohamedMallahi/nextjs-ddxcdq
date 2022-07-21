@@ -1,3 +1,220 @@
+// Navbar Starts
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  border-bottom: 1px solid #dee2e6;
+  background-color: #fff;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  .navbar-brand {
+    font-weight: 800;
+  }
+
+  .navbar-toggler {
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  .navbar-nav > li.nav-item > a.nav-link {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.0625em;
+    text-transform: uppercase;
+  }
+}
+@media (min-width: 992px) {
+  .navbar {
+    border-bottom: 1px solid transparent;
+    background: transparent;
+
+    .navbar-brand {
+      color: #fff;
+
+      &:focus,
+      &:hover {
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+
+    .navbar-nav > li.nav-item > a.nav-link {
+      color: #fff;
+    }
+
+    .navbar-nav > li.nav-item > a.nav-link:focus,
+    .navbar-nav > li.nav-item > a.nav-link:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    transition: background-color 0.2s;
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .navbar.is-fixed {
+    position: fixed;
+    top: -83px;
+    transition: transform 0.2s;
+    border-bottom: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.9);
+
+    .navbar-brand {
+      color: #212529;
+
+      &:focus,
+      &hover {
+        color: #0085a1;
+      }
+    }
+    .navbar-nav > li.nav-item > a {
+      color: #212529;
+
+      &:focus,
+      &:hover {
+        color: #0085a1;
+      }
+    }
+  }
+
+  .navbar.is-visible {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+// Navbar Ends
+
+// Header Starts
+header.masthead {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-top: calc(8rem + 57px);
+  padding-bottom: 8rem;
+  background: no-repeat center center;
+  background-color: #6c757d;
+  background-size: cover;
+  background-attachment: scroll;
+}
+header.masthead:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #212529;
+  opacity: 0.5;
+}
+header.masthead .page-heading,
+header.masthead .post-heading,
+header.masthead .site-heading {
+  color: #fff;
+}
+header.masthead .page-heading,
+header.masthead .site-heading {
+  text-align: center;
+}
+header.masthead .page-heading h1,
+header.masthead .page-heading .h1,
+header.masthead .site-heading h1,
+header.masthead .site-heading .h1 {
+  font-size: 3rem;
+}
+header.masthead .page-heading .subheading,
+header.masthead .site-heading .subheading {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.1;
+  display: block;
+  margin-top: 0.625rem;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+header.masthead .post-heading h1,
+header.masthead .post-heading .h1 {
+  font-size: 2.25rem;
+}
+header.masthead .post-heading .meta,
+header.masthead .post-heading .subheading {
+  line-height: 1.1;
+  display: block;
+}
+header.masthead .post-heading .subheading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0.75rem 0 2rem;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+header.masthead .post-heading .meta {
+  font-size: 1.25rem;
+  font-weight: 300;
+  font-style: italic;
+  font-family: 'Lora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+}
+header.masthead .post-heading .meta a {
+  color: #fff;
+}
+@media (min-width: 992px) {
+  header.masthead {
+    padding-top: 12.5rem;
+    padding-bottom: 12.5rem;
+  }
+  header.masthead .page-heading h1,
+  header.masthead .page-heading .h1,
+  header.masthead .site-heading h1,
+  header.masthead .site-heading .h1 {
+    font-size: 5rem;
+  }
+  header.masthead .post-heading h1,
+  header.masthead .post-heading .h1 {
+    font-size: 3.5rem;
+  }
+  header.masthead .post-heading .subheading {
+    font-size: 1.875rem;
+  }
+}
+
+// Header Ends
+
+// Article Card Starts
+
+.article-card {
+  display: flex;
+  margin-bottom: 2rem;
+  border: 1px solid #ccc;
+
+  .article-text {
+    flex: 2;
+    padding: 1rem;
+  }
+
+  .article-image {
+    flex: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+// Article Card ENds
+
 // Next Images
 
 .image-container {

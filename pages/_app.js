@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import { AuthProvider } from '../contexts/AuthContext';
 
-import Navbar from '../components/Navbar';
+import Navbarr from '../components/Navbarr';
+import Header from '../components/Header';
 import Footer from '../components/Footer';
 import '../styles/styles.scss';
 
@@ -19,7 +20,8 @@ function Layout({ Component, pageProps }) {
       <Head>
         <title>NetBlogger</title>
       </Head>
-      <Navbar />
+      <Navbarr />
+      <Header />
       <main className="container py-3">
         <Component {...pageProps} />
       </main>
