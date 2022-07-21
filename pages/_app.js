@@ -21,10 +21,7 @@ function Layout({ Component, pageProps }) {
         <title>NetBlogger</title>
       </Head>
       <Navbarr />
-      <Header />
-      <main className="container py-3">
-        <Component {...pageProps} />
-      </main>
+      <Component {...pageProps} />
       <Footer />
     </AuthProvider>
   );

@@ -14,21 +14,24 @@ export default function Article({ article }) {
         />
         <title>{article.title}</title>
       </Head>
-      <article>
-        <h1>{article.title}</h1>
-        {/* <span style={{ fontSize: '13px', color: '#333' }}>
-          {'Published in ' + new Date(createdAt).toDateString()}
-        </span> */}
-        <div className="image-container">
-          <Image
-            className="image"
-            src={article.image}
-            alt={article.title}
-            layout="fill"
-          />
-        </div>
-        <p>{parse(article.body)}</p>
-      </article>
+      <Header
+        title={article.title}
+        image={article.image}
+        subtitle="A Blog Theme by Start Bootstrap"
+      />
+      <main className="container py-2">
+        <article>
+          <div className="image-container">
+            <Image
+              className="image"
+              src={article.image}
+              alt={article.title}
+              layout="fill"
+            />
+          </div>
+          <p>{parse(article.body)}</p>
+        </article>
+      </main>
     </>
   );
 }
