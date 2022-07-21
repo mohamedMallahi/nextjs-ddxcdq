@@ -10,9 +10,6 @@ function BlogCard({ article }) {
         <Link href={`article/${article.slug}`}>
           <h2 class="post-title">{article.title}</h2>
         </Link>
-        <h3 class="post-subtitle">
-          A Chinese tale tells of some men sent to harm
-        </h3>
         <p class="post-meta">
           Posted by
           <Link href="/">Mohamed Mallahi</Link> on September 24, 2022

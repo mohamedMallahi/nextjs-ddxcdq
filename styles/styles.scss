@@ -201,6 +201,13 @@ header.masthead .post-heading .meta a {
   .article-text {
     flex: 2;
     padding: 1rem;
+
+    .post-title {
+      cursor: pointer;
+      font-size: 1.875rem;
+      margin-top: 1.875rem;
+      margin-bottom: 0.625rem;
+    }
   }
 
   .article-image {
