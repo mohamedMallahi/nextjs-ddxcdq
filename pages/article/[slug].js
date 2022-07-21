@@ -22,14 +22,6 @@ export default function Article({ article }) {
       />
       <main className="container py-2">
         <article>
-          <div className="image-container">
-            <Image
-              className="image"
-              src={article.image}
-              alt={article.title}
-              layout="fill"
-            />
-          </div>
           <p>{parse(article.body)}</p>
         </article>
       </main>

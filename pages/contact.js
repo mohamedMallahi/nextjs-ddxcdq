@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { db } from '../config/firebase';
 import { collection, addDoc } from 'firebase/firestore';
 import { useForm } from '../utils/hooks';
+import Header from '../components/Header';
 
 const Contact = () => {
   const [values, changeHandler, clearFields] = useForm({
@@ -27,44 +28,50 @@ const Contact = () => {
       <Head>
         <title>NetBlogger | Contact Us</title>
       </Head>
-      <form className="form" onSubmit={submitHandler}>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input
-            className="form-control"
-            value={values.email}
-            onChange={changeHandler}
-            name="email"
-            type="text"
-            name="email"
-          />
-        </div>
-        <div>
-          <label htmlFor="subject">Subject</label>
-          <input
-            className="form-control"
-            value={values.subject}
-            onChange={changeHandler}
-            name="subject"
-            type="text"
-            name="subject"
-          />
-        </div>
-        <div>
-          <label htmlFor="message">Message</label>
-          <textarea
-            className="form-control"
-            value={values.message}
-            onChange={changeHandler}
-            name="message"
-            type="text"
-            name="message"
-          />
-        </div>
-        <button className="btn btn-success mt-2" type="submit">
-          Send
-        </button>
-      </form>
+      <Header
+        title="Contact Us"
+        image="https://images.pexels.com/photos/1416530/pexels-photo-1416530.jpeg?auto=compress&cs=tinysrgb&w=400"
+      />
+      <main className="container py-2">
+        <form className="form" onSubmit={submitHandler}>
+          <div>
+            <label htmlFor="email">Email</label>
+            <input
+              className="form-control"
+              value={values.email}
+              onChange={changeHandler}
+              name="email"
+              type="text"
+              name="email"
+            />
+          </div>
+          <div>
+            <label htmlFor="subject">Subject</label>
+            <input
+              className="form-control"
+              value={values.subject}
+              onChange={changeHandler}
+              name="subject"
+              type="text"
+              name="subject"
+            />
+          </div>
+          <div>
+            <label htmlFor="message">Message</label>
+            <textarea
+              className="form-control"
+              value={values.message}
+              onChange={changeHandler}
+              name="message"
+              type="text"
+              name="message"
+            />
+          </div>
+          <button className="btn btn-success mt-2" type="submit">
+            Send
+          </button>
+        </form>
+      </main>
     </>
   );
 };
