@@ -15,7 +15,7 @@ function BlogCard({ article }) {
         </h3>
         <p class="post-meta">
           Posted by
-          <Link href="/">{article.author}</Link> on September 24, 2022
+          <Link href="/">Mohamed Mallahi</Link> on September 24, 2022
         </p>
       </div>
     </div>
