@@ -2,7 +2,6 @@ import Head from 'next/head';
 import { AuthProvider } from '../contexts/AuthContext';
 
 import Navbarr from '../components/Navbarr';
-import Header from '../components/Header';
 import Footer from '../components/Footer';
 import '../styles/styles.scss';
 

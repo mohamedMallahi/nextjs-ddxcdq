@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Header from '../components/Header';
 import BlogCard from '../components/BlogCard';
 import getArticles from '../utils/getArticles';
 

@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { db } from '../../config/firebase';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import parse from 'html-react-parser';
+import Header from '../../components/Header';
 
 export default function Article({ article }) {
   return (
