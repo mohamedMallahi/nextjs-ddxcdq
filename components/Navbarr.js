@@ -2,12 +2,14 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useAuth } from '../contexts/AuthContext';
 
+import styles from '../styles/Navbar.module.scss';
+
 const Navbarr = () => {
   const { user, signout } = useAuth();
   const router = useRouter();
 
   return (
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class={` ${styles.navbar} navbar navbar-expand-lg navbar-dark`}>
       <div class="container px-4 px-lg-5">
         <Link href="/">
           <a class="navbar-brand">NetBlogger</a>
