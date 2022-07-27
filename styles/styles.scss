@@ -1,3 +1,9 @@
+// Global
+
+p {
+  font-size: 20px;
+}
+
 // Header Starts
 header.masthead {
   position: relative;
@@ -141,6 +147,8 @@ header.masthead .post-heading .meta a {
     object-fit: cover; // Optional
   }
 }
+
+// Articles container
 
 .articles {
   display: grid;
