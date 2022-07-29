@@ -1,3 +1,2 @@
 # NetBlogger
-
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/nextjs-ddxcdq)
+A minimalist blogging system for creating high-quality content.
