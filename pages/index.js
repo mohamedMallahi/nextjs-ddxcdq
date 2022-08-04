@@ -19,7 +19,7 @@ export default function Home({ articles }) {
       <Header
         title="NetBlogger"
         image="https://images.pexels.com/photos/4245826/pexels-photo-4245826.jpeg?auto=compress&cs=tinysrgb&w=450"
-        subtitle=" A Blog Theme by Start Bootstrap"
+        subtitle=" A minimalist blog site template"
       />
       <main className="container py-3">
         {articles.map((article) => (
