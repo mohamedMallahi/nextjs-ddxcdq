@@ -1,6 +1,6 @@
 import Link from 'next/link';
 // import styles from '../styles/Admin.module.css';
-import '../styles/admin.scss';
+// import '../styles/admin.scss';
 
 const AdminLayout = ({ children }) => {
   const handleSidebarToggle = () => {

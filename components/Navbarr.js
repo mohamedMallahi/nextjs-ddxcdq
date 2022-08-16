@@ -9,7 +9,7 @@ const Navbarr = () => {
   const router = useRouter();
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark">
+    <nav className="navbar main-navbar navbar-expand-lg navbar-dark">
       <div className="container px-4 px-lg-5">
         <Link href="/">
           <a className="navbar-brand">NetBlogger</a>
