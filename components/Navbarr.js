@@ -43,23 +43,6 @@ const Navbarr = () => {
               </Link>
             </li>
           </ul>
-          {user ? (
-            <>
-              <Link href="/admin">
-                <a className="btn btn-info  me-2">Admin</a>
-              </Link>
-              <button onClick={(e) => signout()} className="btn btn-danger">
-                Sign Out
-              </button>
-            </>
-          ) : (
-            <button
-              onClick={(e) => router.push('/signup')}
-              className="btn btn-success"
-            >
-              Sign Up
-            </button>
-          )}
         </div>
       </div>
     </nav>

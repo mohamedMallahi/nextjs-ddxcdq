@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import styles from '../styles/Admin.module.css';
+// import styles from '../styles/Admin.module.css';
+import '../styles/admin.scss';
 
 const AdminLayout = ({ children }) => {
   const handleSidebarToggle = () => {
@@ -7,13 +8,9 @@ const AdminLayout = ({ children }) => {
   };
 
   return (
-    <div className={`${styles.wrapper} d-flex`}>
-      <div
-        className={`sidebarWrapper ${styles.sidebarWrapper} border-end bg-primary`}
-      >
-        <div
-          className={`${styles.sidebarHeading} border-bottom bg-primar text-light`}
-        >
+    <div className="wrapper d-flex">
+      <div className="sidebarWrapper border-end bg-primary">
+        <div className="sidebarHeading border-bottom bg-primary text-light">
           NetBlogger
         </div>
         <div className="list-group list-group-flush">
@@ -36,7 +33,7 @@ const AdminLayout = ({ children }) => {
         </div>
       </div>
 
-      <div className={styles.pageContentWrapper}>
+      <div className="pageContentWrapper">
         <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
           <div className="container-fluid">
             <button className="btn btn-primary" onClick={handleSidebarToggle}>
