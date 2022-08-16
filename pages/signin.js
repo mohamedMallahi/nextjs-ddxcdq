@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Footer from '../components/Footer';
 
 // hooks
+import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { useAuth } from '../contexts/AuthContext';
 import { useForm } from '../utils/hooks';
@@ -16,14 +17,25 @@ const SignIn = () => {
     email: '',
     password: '',
   });
+  const [alert, setAlert] = useState(null);
 
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
       await signin(values.email, values.password);
+      setAlert({
+        type: 'success',
+        message: 'Account connected successfully',
+      });
       router.push('/admin');
     } catch (err) {
-      console.log(err);
+      if (err.message.includes('wrong-password')) {
+        setAlert({
+          type: 'warning',
+          message: 'Password is wrong',
+        });
+        setTimeout(() => setAlert(null), 2000);
+      }
     }
   };
 
@@ -36,6 +48,11 @@ const SignIn = () => {
         <div className="form-sign">
           <form onSubmit={submitHandler}>
             <h1 className="h3 mb-3 fw-normal text-center">Please Sign In</h1>
+            {alert && (
+              <div className={`alert alert-${alert.type}`} role="alert">
+                {alert.message}
+              </div>
+            )}
             <div className="form-floating mb-3">
               <input
                 className="form-control"
