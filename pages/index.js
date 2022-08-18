@@ -32,7 +32,7 @@ export default function Home({ articles }) {
             <img
               src="https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=400"
               alt=""
-              className="w-100 rounded"
+              className=" rounded"
               style={{ width: '100px', height: '100px' }}
             />
             <h1>Mohamed Mallahi</h1>
