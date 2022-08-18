@@ -28,14 +28,13 @@ export default function Home({ articles }) {
           ))}
         </div>
         <aside className="col-md-3">
-          <div className="text-center">
+          <div className="text-center border">
             <img
               src="https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=400"
               alt=""
-              className=" rounded"
-              style={{ width: '100px', height: '100px' }}
+              style={{ width: '100px', height: '100px', borderRadius: '50%' }}
             />
-            <h1>Mohamed Mallahi</h1>
+            <h3>Mohamed Mallahi</h3>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime,
               iure!
