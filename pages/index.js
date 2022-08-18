@@ -21,10 +21,27 @@ export default function Home({ articles }) {
         image="https://images.pexels.com/photos/4245826/pexels-photo-4245826.jpeg?auto=compress&cs=tinysrgb&w=450"
         subtitle=" A minimalist blog site template"
       />
-      <main className="container py-3">
-        {articles.map((article) => (
-          <BlogCard key={article.id} article={article} />
-        ))}
+      <main className="container py-3 row">
+        <div className="col-md-9">
+          {articles.map((article) => (
+            <BlogCard key={article.id} article={article} />
+          ))}
+        </div>
+        <aside className="col-md-3">
+          <div className="text-center">
+            <img
+              src="https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=400"
+              alt=""
+              className="w-100 rounded"
+              style={{ width: '100px', height: '100px' }}
+            />
+            <h1>Mohamed Mallahi</h1>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime,
+              iure!
+            </p>
+          </div>
+        </aside>
       </main>
     </>
   );
